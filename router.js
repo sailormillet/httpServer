@@ -1,9 +1,9 @@
 'user strict'
 //路由
-function route ( pathname, handle, response, postData) {
+function route ( pathname, handle, response, request) {
 console.log ('About to router a request for ' + pathname)
 if(typeof handle[pathname] === 'function'){
-return handle[pathname](response, postData)
+return handle[pathname](response, request)
 }else{
 console.log('No request handler found for ' + pathname)
 response.writeHead(200,{'content-Type': 'text/html'})
